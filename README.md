@@ -1,6 +1,8 @@
-# Gemeinde- und Wahlkreis-Daten Bundestagswahl 2025
+# Bundestagswahl 2025: Gemeinde- und Wahlkreis-Daten
 
-In der Wahlnacht des 23. Februar hat Zeit Online die Daten der Gemeindeverbände Deutschlands zusammengetragen. Der vorliegende Datensatz kombiniert diese mit den offiziellen Wahlkreis-Ergebnissen der Bundeswahlleiterin zu einem Datensatz der grob gesagt „auf dem Land“ die Gemeindeverbände mit den Wahlkreisen „in der Stadt“ vereint.
+In der Wahlnacht des 23. Februar hat Zeit Online die Daten der Gemeindeverbände Deutschlands zusammengetragen. Der vorliegende Datensatz kombiniert diese mit den offiziellen Wahlkreis-Ergebnissen der Bundeswahlleiterin zu einem Datensatz der grob gesagt „auf dem Land“ die Gemeindeverbände mit den Wahlkreisen „in der Stadt“ vereint. Die Daten wurden am 25. Februar 2025 in diesem [Artikel auf Zeit Online](https://www.zeit.de/politik/deutschland/2025-02/bundestagswahl-wahlergebnisse-gemeinden-wahlkarte) veröffentlicht.
+
+Der Datensatz enthält Fehler. Diese sind einerseits dort entstanden, wo Personen falsche Werte eingetragen haben (z.B. mehr Wählende als Wahlberechtigte). Andererseits sind auch Fehler, die durch das Zusammentragen der Daten entstanden sind (Scraping), nicht ausgeschlossen. Sie können gerne per [Mail an uns](mailto:bundestagswahl@zeit.de) gemeldet werden.
 
 ## Quellen
 
@@ -45,6 +47,8 @@ Liegt als CSV und RDS (R data serialized) vor und beinhaltet folgende Spalten:
 
 Die 4 Spalten wahlberechtigte bis gueltige sind über jede Geometrie identisch. Die Doppelung existiert an dieser Stelle, sodass die Anteile jeder Partei einfacher berechnet werden kann (`stimmen / gueltige`).
 
+Für die Gemeinden Augsburg, Berlin, Bremen, Bremerhaven, Dresden, Gelsenkirchen, Hamburg, Leipzig, Leverkusen und München liegen keine Gemeindedaten sondern nur Wahlkreisdaten vor.
+
 ### shapes
 
 Passend zu den Daten liegen 4 Shapefiles vor:
@@ -70,6 +74,12 @@ Alle Dateien liegen im Koordinatensystem WGS84 vor und haben folgende Spalten:
  **land**        | character | Bundesland                                                                                            
  **type**        | character | Bezeichnung des Geografie-Typs (z.B. Wahlkreis oder Samtgemeinde)                                     
 
-Die Daten und die Shapes können anhand der `id` gematcht werden. Die Daten beinhalten einige Gemeinden und Wahlkreise mehr als die Shapes. Bei den Gemeinden sind dies die Städte (nicht vollständig) und bei den Wahlkreisen alle regulären Wahlkreise außerhalb der Städte.
+Die Daten und die Shapes können anhand der `id` gematcht werden. Die Daten beinhalten der Vollständigkeit halber auch alle Wahlkreise außerhalb der Städte.
 
 Die Gemeinden Großröhrsdorf (146250200), Arnsdorf (146250010), Wachau (146250600), Radeberg (146250480) und Ottendorf-Okrilla (146250430) in Sachsen werden im kombinierten File nicht dargestellt zugunsten des Wahlkreises Dresden II – Bautzen II (159).
+
+Quellen der Shapefiles: [Bundesamt für Kartographie und Geodäsie BKG](https://gdz.bkg.bund.de/index.php/default/open-data.html) für Gemeindeverbände und [Bundeswahlleiterin](https://www.bundeswahlleiterin.de/bundestagswahlen/2025/wahlkreiseinteilung/downloads.html) für Wahlkreise.
+
+---
+
+<p xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/"><a property="dct:title" rel="cc:attributionURL" href="https://github.com/ZeitOnline/zg-bundestagswahl-2025-gemeinde-daten">Dieser Datensatz</a> von <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.zeit.de/daten-und-visualisierung">Zeit Online</a> untersteht der Lizenz <a href="https://creativecommons.org/licenses/by-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">CC BY-SA 4.0 <img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px!important;margin-left:3px;vertical-align:text-bottom;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a></p> 
